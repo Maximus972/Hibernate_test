@@ -8,8 +8,6 @@ public class Util {
     private final String PASSWORD;
     private Driver driver = null;
     private Connection connection = null;
-    private Statement statement = null;
-    private String tableName = null;
 
     public Util() throws SQLException {
         URL = "jdbc:mysql://localhost:3306/sys";
@@ -18,7 +16,6 @@ public class Util {
         driver = new com.mysql.cj.jdbc.Driver();
         DriverManager.registerDriver(driver);
         this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
-        this.statement = connection.createStatement();
     }
 
     public Util(String URL, String USER, String PASSWORD) throws SQLException {
@@ -28,18 +25,9 @@ public class Util {
         driver = new com.mysql.cj.jdbc.Driver();
         DriverManager.registerDriver(driver);
         this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
-        this.statement = connection.createStatement();
     }
 
     public Connection getConnection() {
         return connection;
-    }
-
-    public Statement getStatement() {
-        return statement;
-    }
-
-    public String getTableName() {
-        return tableName;
     }
 }
