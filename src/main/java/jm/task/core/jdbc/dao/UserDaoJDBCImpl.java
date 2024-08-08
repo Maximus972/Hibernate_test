@@ -22,7 +22,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try {
             connection.createStatement().execute("CREATE TABLE users (id BIGINT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50), lastName VARCHAR(50), age INT)");
         } catch (SQLException e) {
-            System.out.println("Error creating users table");
+            System.out.println("Ошибка при создании таблицы");
         }
     }
 
@@ -30,7 +30,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try {
             connection.createStatement().execute("DROP TABLE users");
         } catch (SQLException e) {
-            System.out.println("Error dropping table users");
+            System.out.println("шибка при удалении таблицы");
         }
     }
 
