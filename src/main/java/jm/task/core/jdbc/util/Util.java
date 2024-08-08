@@ -6,8 +6,8 @@ public class Util {
     private final String URL;
     private final String USER;
     private final String PASSWORD;
-    private Driver driver = null;
-    private Connection connection = null;
+    private Driver driver;
+    private Connection connection;
 
     public Util() throws SQLException {
         URL = "jdbc:mysql://localhost:3306/sys";
